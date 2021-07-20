@@ -41,7 +41,8 @@ function renderCharts() {
             y: otu_ids_final.reverse(),
             text: otu_labels.reverse(),
             type: "bar",
-            orientation: "h"
+            orientation: "h",
+            hovertemplate: "Bacteria type: %{y}, Count: %{x}"
         }];
 
         // Populate dictionary with info for the graph's "bubbles"
