@@ -42,7 +42,7 @@ function renderCharts() {
             text: otu_labels.reverse(),
             type: "bar",
             orientation: "h",
-            hovertemplate: "Bacteria type: %{text}, Count: %{x}<extra></extra>"
+            hovertemplate: "Bacteria type: %{text},<br>Count: %{x}<extra></extra>"
         }];
 
         // Populate dictionary with info for the graph's "bubbles"
