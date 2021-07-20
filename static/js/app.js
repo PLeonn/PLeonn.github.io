@@ -9,7 +9,7 @@ function grabMetaData(data) {
         // Clear sampleMetaData variable and fill 
         sampleMetaData.html("");
         Object.entries(filtData).forEach(([key, value]) => {
-          sampleMetaData.append("h5").text(`${key}:` + ` ` + `${value}`);
+          sampleMetaData.append("h5").text(`${key}: ${value}`);
         })
 
     });
