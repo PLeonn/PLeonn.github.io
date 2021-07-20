@@ -9,7 +9,7 @@ function grabMetaData(data) {
         // Clear sampleMetaData variable and fill 
         sampleMetaData.html("");
         Object.entries(filtData).forEach(([key, value]) => {
-          sampleMetaData.append("h5").text(`${key}:${value}`);
+          sampleMetaData.append("h5").text("${key}:" + " " + "${value}");
         })
 
     });
@@ -17,6 +17,7 @@ function grabMetaData(data) {
 
 // Create funtion to render the bar chart/bubbles
 function renderCharts() {
+    
     // Bring in data and extract all data first
     d3.json("samples.json").then(function(dataImport) {
         var data = dataImport;
@@ -25,8 +26,10 @@ function renderCharts() {
         var all_otu_ids = dataSamples[0].otu_ids;
         var all_sample_values = dataSamples[0].sample_values;
         var all_otu_labels = dataSamples[0].otu_labels;
+
         // Use .map and .slice to curate down to only desired data
         var otu_ids =  dataSamples.map(({ otu_ids }) => otu_ids.slice(0, 10))[0];
+
         // Added this step to clearly convey OTU information
         var otu_ids_final  = otu_ids.map(x => "OTU:" + " " + x);
         var otu_labels = dataSamples.map(({ otu_labels }) => otu_labels.slice(0, 10))[0];
